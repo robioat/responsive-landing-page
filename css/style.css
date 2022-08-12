@@ -1,7 +1,10 @@
 body{
     height:100vh;
     width:100%;
+
+    --large-container-width:80%;
 }
+/** Header Styles **/
 .header-container{
     display:flex;
     justify-content:center;
@@ -10,7 +13,7 @@ body{
     display:flex;
     flex-direction:row;
     justify-content:space-between;
-    width:90%;
+    width:var(--large-container-width);
 }
 .logo{
     display:flex;
@@ -19,10 +22,43 @@ body{
 
 }
 .menu ul{
-    list-style-type:none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
     display:flex;
     gap:10%;
     justify-content:flex-end;
 }
 .menu ul li{
+}
+.menu ul li a{
+    text-decoration:none;
+}
+
+/** Hero Styles **/
+.hero-container{
+    display:flex;
+    justify-content:center;
+}
+
+.hero{
+    display:flex;
+    width:var(--large-container-width);
+    flex-direction:row;
+}
+
+.hero .column{
+    width:50%;
+}
+
+/* cards container */
+.cards-container{
+    display:flex;
+    justify-content:center;
+}
+.cards{
+    display:flex;
+    flex-direction:row;
+    width:var(--large-container-width);
+    justify-content:center;
 }
