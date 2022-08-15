@@ -1,3 +1,6 @@
+*{
+    box-sizing:border-box;
+}
 body{
     height:100vh;
     width:100%;
@@ -8,19 +11,28 @@ body{
     --off-white:#F9FAF8;
     --light-grey:#E5E7EB;
     --bright-blue:#3882F6;
+    --section-vertical-padding:100px; 
     font-family: 'Roboto Condensed', sans-serif;
 }
 p.no-margin{
     margin:0;
 }
+/* Heading Styles */
+h1,h2,h3,h4,h5,h6{
+
+}
+h1{}
+
 /* Header Styles */
 .header-hero-container{
     background-color: var(--dark-blue);
     color:var(--off-white);
+    padding:0 0 var(--section-vertical-padding) 0;
 }
 .header-container{
     display:flex;
     justify-content:center;
+    padding:20px 0 var(--section-vertical-padding) 0;
 }
 .header{
     display:flex;
@@ -64,18 +76,49 @@ p.no-margin{
     width:50%;
 }
 
+.hero .right{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-color:#6D747E;
+}
+
+
 /* cards styles */
 .cards-container{
     display:flex;
-    flex-direction:column;
+    flex-direction:row;
     justify-content:center;
     background-color:var(--off-white);
+    padding:0 0 var(--section-vertical-padding) 0;
 }
 .cards{
+    width:var(--large-container-width);
+}
+.cards-body{
     display:flex;
     flex-direction:row;
-    width:var(--large-container-width);
     justify-content:center;
+}
+.card-container{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content: space-between;
+    gap: 10px;
+}
+.card{
+    width:200px;
+    height:200px;
+    border-radius:25px;
+    border: 5px solid #000;
+}
+
+.cards-title{
+    display:flex;
+    justify-content:center;
+    height:var(--section-vertical-padding);
+    align-items:center;
 }
 /* testimonials */
 .testimonials-container{
@@ -83,12 +126,18 @@ p.no-margin{
     flex-direction:row;
     justify-content:center;
     background-color:var(--light-grey);
+    padding:var(--section-vertical-padding) 0;
 }
 .testimonials{
     display:flex;
     flex-direction:column;
     width:var(--small-container-width);
-
+    width:var(--small-container-width);
+    align-content:space-between;
+    gap:10px;
+}
+.testimonial-author{
+    align-self:flex-end;
 }
 /* call to action */
 .call-to-action-container{
@@ -100,6 +149,8 @@ p.no-margin{
 .call-to-action{
     display:flex;
     flex-direction:row;
+    justify-content:space-evenly;
+    gap:var(--section-vertical-padding);
     width:var(--small-container-width);
     
 }
