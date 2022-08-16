@@ -19,7 +19,8 @@ p.no-margin{
 }
 /* Heading Styles */
 h1,h2,h3,h4,h5,h6{
-
+    margin:0;
+    padding:0;
 }
 h1{}
 
@@ -145,6 +146,7 @@ h1{}
     flex-direction:row;
     justify-content:center;
     background-color:var(--off-white);
+    padding:var(--section-vertical-padding) 0;
 }
 .call-to-action{
     display:flex;
@@ -152,13 +154,24 @@ h1{}
     justify-content:space-evenly;
     gap:var(--section-vertical-padding);
     width:var(--small-container-width);
-    
+}
+.call-to-action-body{
+    display:flex;
+    justify-content:center;
+    flex-direction:column;
+}
+.call-to-action-button{
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 /*footer*/
-.footer-container{
-    background-color:var(--dark-blue);
-}
 .footer{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:var(--section-vertical-padding);
+    background-color:var(--dark-blue);
     color:var(--off-white);
 }
 
