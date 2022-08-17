@@ -12,6 +12,7 @@ body{
     --light-grey:#E5E7EB;
     --bright-blue:#3882F6;
     --section-vertical-padding:100px; 
+    --smaller-padding:50px;
     font-family: 'Roboto', sans-serif;
 }
 p.no-margin{
@@ -34,6 +35,7 @@ h1{}
     display:flex;
     justify-content:center;
     padding:20px 0 var(--section-vertical-padding) 0;
+    gap:50
 }
 .header{
     display:flex;
@@ -75,6 +77,7 @@ h1{}
     display:flex;
     width:var(--large-container-width);
     flex-direction:row;
+    gap:var(--smaller-padding);
 }
 
 .hero .column{
@@ -86,6 +89,17 @@ h1{}
     justify-content:center;
     align-items:center;
     background-color:#6D747E;
+}
+
+.hero h1{
+    font-size:48px;
+    font-weight:700;
+    color:var(--off-white);
+}
+
+.hero p{
+    font-size:18px;
+    color:var(--light-grey);
 }
 
 
