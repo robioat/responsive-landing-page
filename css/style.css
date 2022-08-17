@@ -43,22 +43,28 @@ h1{}
 }
 .logo{
     display:flex;
+    font-size: 24px;
+    font-weight:500;
 }
 .menu{
-
+    display:flex;
+    flex:2;
 }
 .menu ul{
     list-style-type: none;
     margin: 0;
     padding: 0;
     display:flex;
-    gap:10%;
-    justify-content:flex-end;
+    gap: 20px;
+    justify-content: flex-end;
+    width: 100%;
 }
 .menu ul li{
+    display:inline-block;
 }
 .menu ul li a{
     text-decoration:none;
+    color:var(--light-grey);
 }
 
 /* Hero Styles */
