@@ -13,11 +13,27 @@ body{
     --bright-blue:#3882F6;
     --section-vertical-padding:100px; 
     --smaller-padding:50px;
+    --radius:15px;
     font-family: 'Roboto', sans-serif;
 }
 p.no-margin{
     margin:0;
 }
+
+button{
+    background-color: var(--bright-blue);
+    color: inherit;
+    border: none;
+    padding: 8px 35px;
+    font-weight: 600;
+    cursor: pointer;
+    outline: inherit;
+    border-radius: 8px;
+    margin: 0px;
+    font-size: 17px;
+    color:var(--off-white);
+}
+
 /* Heading Styles */
 h1,h2,h3,h4,h5,h6{
     margin:0;
@@ -129,8 +145,8 @@ h1{}
 .card{
     width:200px;
     height:200px;
-    border-radius:25px;
-    border: 5px solid #000;
+    border-radius:var(--radius);
+    border:5px solid var(--bright-blue);
 }
 
 .cards-title{
@@ -139,6 +155,7 @@ h1{}
     height:var(--section-vertical-padding);
     align-items:center;
 }
+
 /* testimonials */
 .testimonials-container{
     display:flex;
@@ -158,6 +175,7 @@ h1{}
 .testimonial-author{
     align-self:flex-end;
 }
+
 /* call to action */
 .call-to-action-container{
     display:flex;
@@ -169,20 +187,28 @@ h1{}
 .call-to-action{
     display:flex;
     flex-direction:row;
-    justify-content:space-evenly;
+    justify-content:space-between;
     gap:var(--section-vertical-padding);
-    width:var(--small-container-width);
+    width:var(--large-container-width);
+    background-color:var(--bright-blue);
+    padding:var(--smaller-padding);
+    color:var(--off-white);
+    border-radius: var(--radius);
 }
 .call-to-action-body{
     display:flex;
     justify-content:center;
     flex-direction:column;
 }
-.call-to-action-button{
+.call-to-action-button-container{
     display:flex;
     justify-content:center;
     align-items:center;
 }
+.call-to-action button{
+    border:2px solid var(--off-white);
+}
+
 /*footer*/
 .footer{
     display:flex;
