@@ -14,6 +14,7 @@ body{
     --section-vertical-padding:100px; 
     --smaller-padding:50px;
     --radius:15px;
+    --card-width:200px;
     font-family: 'Roboto', sans-serif;
 }
 p.no-margin{
@@ -133,7 +134,7 @@ h1{}
 .cards-body{
     display:flex;
     flex-direction:row;
-    justify-content:center;
+    justify-content:space-evenly;
 }
 .card-container{
     display:flex;
@@ -141,9 +142,13 @@ h1{}
     align-items:center;
     justify-content: space-between;
     gap: 10px;
+    width:var(--card-width);
+}
+.card-container p{
+    text-align:center;
 }
 .card{
-    width:200px;
+    width:var(--card-width);
     height:200px;
     border-radius:var(--radius);
     border:5px solid var(--bright-blue);
