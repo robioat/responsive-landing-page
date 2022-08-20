@@ -15,6 +15,7 @@ body{
     --smaller-padding:50px;
     --radius:15px;
     --card-width:200px;
+    --single-column-width:284px;
     font-family: 'Roboto', sans-serif;
 }
 p.no-margin{
@@ -92,6 +93,7 @@ h1{}
 .hero-container{
     display:flex;
     justify-content:center;
+    flex-wrap:wrap;
 }
 
 .hero{
@@ -99,10 +101,11 @@ h1{}
     width:var(--large-container-width);
     flex-direction:row;
     gap:var(--smaller-padding);
+    flex-wrap:wrap;
 }
 
 .hero .column{
-    width:50%;
+    flex:1 1 var(--single-column-width);
 }
 
 .hero .right{
