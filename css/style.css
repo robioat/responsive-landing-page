@@ -59,13 +59,16 @@ h1{}
     flex-direction:row;
     justify-content:space-between;
     width:var(--large-container-width);
+    gap: 50px;
 }
 .logo{
     display:flex;
+    align-items: center;
 }
 .menu{
     display:flex;
     flex:2;
+    align-items: center;
 }
 .menu ul{
     list-style-type: none;
@@ -75,6 +78,7 @@ h1{}
     gap: 20px;
     justify-content: flex-end;
     width: 100%;
+    flex-wrap:wrap;
 }
 .menu ul li{
     display:inline-block;
