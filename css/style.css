@@ -200,8 +200,9 @@ h1{}
 .call-to-action{
     display:flex;
     flex-direction:row;
+    flex-wrap:wrap;
     justify-content:space-between;
-    gap:var(--section-vertical-padding);
+    gap:20px;
     width:var(--large-container-width);
     background-color:var(--bright-blue);
     padding:var(--smaller-padding);
@@ -212,6 +213,7 @@ h1{}
     display:flex;
     justify-content:center;
     flex-direction:column;
+    flex:var(--single-column-width);
 }
 .call-to-action-button-container{
     display:flex;
