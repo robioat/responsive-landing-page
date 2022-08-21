@@ -13,6 +13,7 @@ body{
     --bright-blue:#3882F6;
     --section-vertical-padding:100px; 
     --smaller-padding:50px;
+    --typography-v-padding:20px;
     --radius:15px;
     --card-width:200px;
     --single-column-width:284px;
@@ -52,7 +53,7 @@ h1{}
 .header-container{
     display:flex;
     justify-content:center;
-    padding:20px 0 var(--section-vertical-padding) 0;
+    padding:var(--typography-v-padding) 0 var(--section-vertical-padding) 0;
     gap:50
 }
 .header{
@@ -76,7 +77,7 @@ h1{}
     margin: 0;
     padding: 0;
     display:flex;
-    gap: 20px;
+    gap: var(--typography-v-padding);
     justify-content: flex-end;
     width: 100%;
     flex-wrap:wrap;
@@ -156,8 +157,9 @@ h1{}
     justify-content: space-between;
     width:var(--card-width);
 }
-.card-container p{
+.card-body{
     text-align:center;
+    padding-top:var(--typography-v-padding);
 }
 .card{
     width:var(--card-width);
