@@ -106,6 +106,9 @@ h1{}
 
 .hero .column{
     flex:1 1 var(--single-column-width);
+    display:flex;
+    flex-direction:column;
+    gap:20px;
 }
 
 .hero .right{
@@ -113,6 +116,7 @@ h1{}
     justify-content:center;
     align-items:center;
     background-color:#6D747E;
+    min-height:175px;
 }
 
 .hero h1{
