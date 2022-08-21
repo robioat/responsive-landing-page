@@ -142,13 +142,14 @@ h1{}
     display:flex;
     flex-direction:row;
     justify-content:space-evenly;
+    flex-wrap:wrap;
+    gap:50px;
 }
 .card-container{
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content: space-between;
-    gap: 10px;
     width:var(--card-width);
 }
 .card-container p{
