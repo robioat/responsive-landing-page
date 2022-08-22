@@ -49,6 +49,7 @@ h1{
     font-size:48px;
     font-weight:700;
     color:var(--off-white);
+    line-height:70%;
 }
 h2{
     font-size:36px;
