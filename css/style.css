@@ -9,8 +9,10 @@ body{
     --small-container-width:60%;
     --dark-blue:#1F2937;
     --off-white:#F9FAF8;
-    --light-grey:#E5E7EB;
+    --light-grey:#bfc3c8;
+    --medium-grey:#6b757f;
     --bright-blue:#3882F6;
+    --grey-blue:#c7d5ed;
     --section-vertical-padding:100px; 
     --smaller-padding:50px;
     --typography-v-padding:20px;
@@ -18,6 +20,7 @@ body{
     --card-width:200px;
     --single-column-width:284px;
     font-family: 'Roboto', sans-serif;
+    color:var(--dark-blue);
 }
 p.no-margin{
     margin:0;
@@ -46,6 +49,13 @@ h1{
     font-size:48px;
     font-weight:700;
     color:var(--off-white);
+}
+h2{
+    font-size:36px;
+    font-weight:700;
+}
+h3{
+    font-size:23px;
 }
 
 /* Header Styles */
@@ -92,6 +102,7 @@ h1{
 .menu ul li a{
     text-decoration:none;
     color:var(--light-grey);
+    font-size:18px;
 }
 
 /* Hero Styles */
@@ -122,6 +133,10 @@ h1{
     align-items:center;
     background-color:#6D747E;
     min-height:175px;
+}
+
+.hero .right p{
+    color:var(--off-white);
 }
 
 .hero p{
@@ -160,6 +175,8 @@ h1{
 }
 .card-body p{
     text-align:center;
+    color:var(--medium-grey);
+    font-size:19px;
 }
 .card{
     width:var(--card-width);
@@ -193,6 +210,13 @@ h1{
 }
 .testimonial-author{
     align-self:flex-end;
+    font-size:24px;
+    font-weight:700;
+}
+.testimonial-body p{
+    font-size: 36px;
+    font-style: italic;
+    font-weight:300;
 }
 
 /* call to action */
@@ -215,11 +239,16 @@ h1{
     color:var(--off-white);
     border-radius: var(--radius);
 }
+.call-to-action h3{
+    color:var(--off-white);
+}
 .call-to-action-body{
     display:flex;
     justify-content:center;
     flex-direction:column;
     flex:var(--single-column-width);
+    color:var(--grey-blue);
+    font-size:17px;
 }
 .call-to-action-button-container{
     display:flex;
@@ -238,5 +267,9 @@ h1{
     height:var(--section-vertical-padding);
     background-color:var(--dark-blue);
     color:var(--off-white);
+}
+.footer p{
+    font-size:18px;
+    color:var(--light-grey);
 }
 
