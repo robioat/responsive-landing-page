@@ -15,7 +15,8 @@ body{
     --grey-blue:#c7d5ed;
     --section-vertical-padding:100px; 
     --smaller-padding:50px;
-    --typography-v-padding:20px;
+    --typography-v-padding:10px;
+    --hero-v-padding:15px;
     --radius:15px;
     --card-width:200px;
     --single-column-width:284px;
@@ -44,12 +45,12 @@ button{
 h1,h2,h3,h4,h5,h6{
     margin:0;
     padding:0;
+    line-height:70%;
 }
 h1{
     font-size:48px;
     font-weight:700;
     color:var(--off-white);
-    line-height:70%;
 }
 h2{
     font-size:36px;
@@ -125,7 +126,7 @@ h3{
     flex:1 1 var(--single-column-width);
     display:flex;
     flex-direction:column;
-    gap:20px;
+    gap:var(--hero-v-padding);
 }
 
 .hero .right{
@@ -250,6 +251,7 @@ h3{
     flex:var(--single-column-width);
     color:var(--grey-blue);
     font-size:17px;
+    gap:var(--typography-v-padding);
 }
 .call-to-action-button-container{
     display:flex;
