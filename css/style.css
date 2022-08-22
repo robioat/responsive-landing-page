@@ -158,8 +158,10 @@ h1{}
     width:var(--card-width);
 }
 .card-body{
-    text-align:center;
     padding-top:var(--typography-v-padding);
+}
+.card-body p{
+    text-align:center;
 }
 .card{
     width:var(--card-width);
