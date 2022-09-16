@@ -1,0 +1,512 @@
+/* ==========================================================================
+   General Styles
+   ========================================================================== */
+   * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height:100vh;
+    width:100%;
+
+    --large-container-width:80%;
+    --small-container-width:60%;
+    --dark-blue:#1F2937;
+    --off-white:#F9FAF8;
+    --light-grey:#bfc3c8;
+    --medium-grey:#6b757f;
+    --bright-blue:#3882F6;
+    --grey-blue:#c7d5ed;
+    --section-vertical-padding:100px; 
+    --smaller-padding:50px;
+    --typography-v-padding:10px;
+    --hero-v-padding:15px;
+    --radius:15px;
+    --card-width:200px;
+    --single-column-width:284px;
+    font-family: 'Roboto', sans-serif;
+    color:var(--dark-blue);
+}
+p.no-margin{
+    margin:0;
+}
+
+button{
+    background-color: var(--bright-blue);
+    color: inherit;
+    border: none;
+    padding: 8px 35px;
+    font-weight: 600;
+    cursor: pointer;
+    outline: inherit;
+    border-radius: 8px;
+    margin: 0px;
+    font-size: 17px;
+    color:var(--off-white);
+}
+
+/* Heading Styles */
+h1,h2,h3,h4,h5,h6{
+    margin:0;
+    padding:0;
+    line-height:70%;
+}
+h1{
+    font-size:48px;
+    font-weight:700;
+    color:var(--off-white);
+}
+h2{
+    font-size:36px;
+    font-weight:700;
+}
+h3{
+    font-size:23px;
+}
+
+/* Header Styles */
+.header-hero-container{
+    background-color: var(--dark-blue);
+    color:var(--off-white);
+    padding:0 0 var(--section-vertical-padding) 0;
+}
+.header-container{
+    display:flex;
+    justify-content:center;
+    padding:var(--typography-v-padding) 0 var(--section-vertical-padding) 0;
+    gap:50
+}
+/**
+* Menu Logic
+*
+* 1. Small screen menu uses :target to create opened and closed states, 
+* styles then applied to these selectors. This ensures accessibility as the 
+* menu functions without JavaScript in its basic form.
+*
+* 2. JS then used, preventDefault, so that opening and closing doesnt trigger
+* the browser history.
+*
+* 3. aria-expanded attributes added via JS to replace :target then styled instead
+* of :target.
+*
+* 4. To make the menu slide down underneath the logo, the logo is placed on a 
+* separate layer above.
+*
+* 5. Menu open and close links are within different areas of the html, so to 
+* animate separately they are assigned toggles via JS.
+*/
+
+
+/* Screen reader only */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    --large-layout-width: 80%;
+    --small-layout-width: 60%;
+    --topbar-height: 70px;
+    --dark-blue: #1F2937;
+    --off-white: #F9FAF8;
+    --light-grey: #bfc3c8;
+    --medium-grey: #6b757f;
+    --bright-blue: #3882F6;
+    --grey-blue: #c7d5ed;
+    --section-vertical-padding: 100px;
+    --typography-v-padding: 15px;
+
+    font-family: 'Roboto', sans-serif;
+    color: var(--dark-blue);
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0 0 20px 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    li {
+        display: inline-block;
+        background-color: var(--dark-blue);
+
+        a {
+            text-decoration: none;
+            color: var(--light-grey);
+            font-size: 14px;
+        }
+    }
+}
+
+/* ==========================================================================
+   Toggle Buttons
+   ========================================================================== */
+
+.menu-open a,
+.menu-close a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.menu-open {
+    display: flex;
+    align-items: center;
+    margin-top: -3px;
+
+    a {
+        transform: translateY(100%);
+        transition: 1s;
+        opacity: 0;
+        color: var(--off-white);
+    }
+
+    a.active {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+.menu-close {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    height: var(--topbar-height);
+    background-color: var(--dark-blue);
+
+    a {
+        transform: translateY(-100%);
+        transition: 1s;
+        opacity: 0;
+        color: var(--off-white);
+    }
+
+    a.active {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+/* ==========================================================================
+   Main Container Layout
+   ========================================================================== */
+
+.header-layout {
+    display: flex;
+    justify-content: center;
+    background-color: var(--dark-blue);
+    color: var(--off-white);
+    height: var(--topbar-height);
+
+    .header {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        width: var(--large-layout-width);
+        gap: 10px;
+    }
+}
+
+/* ==========================================================================
+   Logo
+   ========================================================================== */
+
+.logo-layout {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--off-white);
+    height: var(--topbar-height);
+    pointer-events: none;
+
+    .logo-container {
+        width: var(--large-layout-width);
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+}
+/* placed twice in html, therefore not nested */
+.logo-element{
+    background-color: var(--dark-blue);
+    display:flex;
+    width:max-content;
+    height:100%;
+    align-items:center;
+    font-size: 22px;
+    padding:0 50px 0 0;
+}
+
+/* ==========================================================================
+   Small Screen Menu
+   ========================================================================== */
+
+#menu {
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    transform: translateY(-100%);
+    display: flex;
+    justify-content: center;
+    transition: 0.3s;
+    transition-timing-function: cubic-bezier(0.190, 1.000, 0.220, 1.000);
+    background-color: var(--dark-blue);
+
+    &:target,
+    &[aria-expanded="true"] {
+        transform: translateY(0);
+    }
+
+    .small-menu-layout {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        width: var(--large-layout-width);
+        gap: 1px;
+    }
+
+    li {
+        padding: 6px 0;
+    }
+}
+
+/* ==========================================================================
+   Large Screen Items
+   ========================================================================== */
+
+.large-menu,
+.large-screen-logo {
+    top: -500px;
+    position: absolute;
+}
+
+/* ==========================================================================
+   Large Screen Media Query
+   ========================================================================== */
+
+@media (min-width:768px) {
+    .header {
+        flex-direction: row;
+        gap: 50px;
+
+        .menu-open {
+            display: none;
+        }
+
+        .large-menu {
+            display: flex;
+            flex-direction: row;
+            flex: 2;
+            align-items: center;
+            align-content: center;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            column-gap: 15px;
+            row-gap: 10px;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+            top: 0;
+            position: relative;
+        }
+
+        .large-screen-logo {
+            top: 0;
+            position: relative;
+        }
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+    }
+
+    #menu:target {
+        position: absolute;
+        transform: translateY(-100%);
+    }
+}
+
+/* Hero Styles */
+.hero-container{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.hero{
+    display:flex;
+    width:var(--large-container-width);
+    flex-direction:row;
+    gap:var(--smaller-padding);
+    flex-wrap:wrap;
+}
+
+.hero .column{
+    flex:1 1 var(--single-column-width);
+    display:flex;
+    flex-direction:column;
+    gap:var(--hero-v-padding);
+}
+
+.hero .right{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-color:#6D747E;
+    min-height:175px;
+}
+
+.hero .right p{
+    color:var(--off-white);
+}
+
+.hero p{
+    font-size:18px;
+    color:var(--light-grey);
+}
+
+
+/* cards styles */
+.cards-container{
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    background-color:var(--off-white);
+    padding:0 0 var(--section-vertical-padding) 0;
+}
+.cards{
+    width:var(--large-container-width);
+}
+.cards-body{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-evenly;
+    flex-wrap:wrap;
+    gap:50px;
+}
+.card-container{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content: space-between;
+    width:var(--card-width);
+}
+.card-body{
+    padding-top:var(--typography-v-padding);
+}
+.card-body p{
+    text-align:center;
+    color:var(--medium-grey);
+    font-size:19px;
+}
+.card{
+    width:var(--card-width);
+    height:200px;
+    border-radius:var(--radius);
+    border:5px solid var(--bright-blue);
+}
+
+.cards-title{
+    display:flex;
+    justify-content:center;
+    height:var(--section-vertical-padding);
+    align-items:center;
+}
+
+/* testimonials */
+.testimonials-container{
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    background-color:var(--light-grey);
+    padding:var(--section-vertical-padding) 0;
+}
+.testimonials{
+    display:flex;
+    flex-direction:column;
+    width:var(--small-container-width);
+    width:var(--small-container-width);
+    align-content:space-between;
+    gap:10px;
+}
+.testimonial-author{
+    align-self:flex-end;
+    font-size:24px;
+    font-weight:700;
+}
+.testimonial-body p{
+    font-size: 36px;
+    font-style: italic;
+    font-weight:300;
+}
+
+/* call to action */
+.call-to-action-container{
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    background-color:var(--off-white);
+    padding:var(--section-vertical-padding) 0;
+}
+.call-to-action{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    gap:20px;
+    width:var(--large-container-width);
+    background-color:var(--bright-blue);
+    padding:var(--smaller-padding);
+    color:var(--off-white);
+    border-radius: var(--radius);
+}
+.call-to-action h3{
+    color:var(--off-white);
+}
+.call-to-action-body{
+    display:flex;
+    justify-content:center;
+    flex-direction:column;
+    flex:var(--single-column-width);
+    color:var(--grey-blue);
+    font-size:17px;
+    gap:var(--typography-v-padding);
+}
+.call-to-action-button-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.call-to-action button{
+    border:2px solid var(--off-white);
+}
+
+/*footer*/
+.footer{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:var(--section-vertical-padding);
+    background-color:var(--dark-blue);
+    color:var(--off-white);
+}
+.footer p{
+    font-size:18px;
+    color:var(--light-grey);
+}
+

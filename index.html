@@ -11,13 +11,41 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7146d5aa74.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
     <div class="header-hero-container">
-        <div class="header-container">
-            <div class="header">
-                <div class="logo"><h2>Header Logo</h2></div>
-                <div class="menu">
+        <header>
+            <div class="header-layout">
+                <div class="header">
+                    <div class="menu-open">
+                        <a href="#menu" aria-label="Open main menu" class="active">
+                            <span class="sr-only">Open main menu</span>
+                            <i class="fa-solid fa-bars" aria-hidden="true" hidden></i>
+                        </a>
+                    </div>
+                    <div class="logo-element large-screen-logo">
+                        <div class="logo">Header Logo</div>
+                    </div>
+                    <ul class="large-menu">
+                        <li><a href="test.html">header link one</a></li>
+                        <li><a href="test.html">header link two</a></li>
+                        <li><a href="test.html">header link three</a></li> 
+                        <li><a href="test.html">header link four</a></li>
+                        <li><a href="test.html">header link five</a></li>
+                        <li><a href="test.html">header link six</a></li>  
+                    </ul>     
+                </div>    
+            </div>
+            <div id="menu" tabindex="-1" aria-expanded="false">
+                <div class="small-menu-layout">
+                    <div class="menu-close">
+                        <a href="#" aria-label="Close main menu">
+                            <span class="sr-only">Close main menu</span>
+                            <i class="fa-solid fa-xmark fa-lg" aria-hidden="true" hidden></i>
+                        </a>
+                    </div>
                     <ul>
                         <li><a href="test.html">header link one</a></li>
                         <li><a href="test.html">header link two</a></li>
@@ -26,9 +54,18 @@
                         <li><a href="test.html">header link five</a></li>
                         <li><a href="test.html">header link six</a></li>  
                     </ul>
-                </div>                 
+                </div>
             </div>
-        </div>
+            <!-- Duplicate logo for z-index purposes. Allows the mobile menu to slide in under the
+            If altered to slide in from the left or right, unecessary -->
+            <div class="logo-layout">
+                <div class="logo-container">
+                    <div class="logo-element">
+                        <div class="logo">Header Logo</div>
+                    </div>
+                </div>
+            </div>
+        </header>
         
         <div class="hero-container">
             <div class="hero">
@@ -103,5 +140,6 @@
     <div class="footer">
         <p class="no-margin">Copyright &copy; The Odin Project</p>
     </div>
+    <script src="js/script.js"></script>
 </body>
 </html>
